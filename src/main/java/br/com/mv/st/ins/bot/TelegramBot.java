@@ -25,7 +25,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             String response;
 
             if (textMessage.equalsIgnoreCase("chatId") || textMessage.equalsIgnoreCase("1")) {
-                response = "O seu chatId é:\s" + update.getMessage().getChatId();
+                response = "O seu chatId é: " + update.getMessage().getChatId();
 
             } else {
                 response = "No momento, o único comando aceito é:\n 1 - chatId";
@@ -44,7 +44,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // Método responsávem por realizar as ações do bot com base na integração do usuário
-    public void sendMessage(String text, long chatId) {
+    public void sendMessage(String text, String chatId) {
         var message = new SendMessage();
         message.setChatId(chatId);
         message.setText(text);
