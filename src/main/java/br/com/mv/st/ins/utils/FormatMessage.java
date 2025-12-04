@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FilterAndFormatMessage {
 
-    public String filterAndFormat(List<Ticket> ticketsList) {
+    public String formattedMessage(List<Ticket> ticketsList) {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < ticketsList.size(); i++) {
@@ -32,7 +32,7 @@ public class FilterAndFormatMessage {
                     ticket.getTicketURL()
             );
 
-            builder.append(formattedMessage.toString());
+            builder.append(formattedMessage);
 
             // Se não for o último, adiciona separador
             if (i < ticketsList.size() - 1) {
