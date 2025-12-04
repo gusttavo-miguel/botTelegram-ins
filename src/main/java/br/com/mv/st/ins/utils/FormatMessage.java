@@ -5,7 +5,7 @@ import org.apache.logging.log4j.message.StringFormattedMessage;
 
 import java.util.List;
 
-public class FilterAndFormatMessage {
+public class FormatMessage {
 
     public String formattedMessage(List<Ticket> ticketsList) {
         StringBuilder builder = new StringBuilder();

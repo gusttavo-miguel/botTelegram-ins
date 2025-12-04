@@ -5,7 +5,7 @@ import br.com.mv.st.ins.bot.TelegramBot;
 import br.com.mv.st.ins.pojo.Data;
 import br.com.mv.st.ins.pojo.MessageWrapper;
 import br.com.mv.st.ins.pojo.Ticket;
-import br.com.mv.st.ins.utils.FilterAndFormatMessage;
+import br.com.mv.st.ins.utils.FormatMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +29,8 @@ public class BotController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
-        FilterAndFormatMessage filter = new FilterAndFormatMessage();
-        String mensageFormated = filter.filterAndFormat(ticketsList);
+        FormatMessage filter = new FormatMessage();
+        String mensageFormated = filter.formattedMessage(ticketsList);
 
         TelegramBot bot = new TelegramBot();
         bot.sendMessage(String.valueOf(mensageFormated), BotCredentials.CHAT_ID);
