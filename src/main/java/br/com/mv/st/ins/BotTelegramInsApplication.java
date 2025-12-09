@@ -11,8 +11,11 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class BotTelegramInsApplication {
 
 	public static void main(String[] args) {
+
+        // Inicia a aplicação Spring Boot
 		SpringApplication.run(BotTelegramInsApplication.class, args);
 
+        // Registra o bot na API do Telegram
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new TelegramBot());
